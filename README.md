@@ -3,7 +3,9 @@ Adopting the huffman compression assignment I completed for my advanced algorith
 
 Completed TODO:
 - Implemented a UI
-- Improved logic around creating prefix trees
+- Improved logic around creating prefix trees, adding nodes back into pqueue to leverage the min heap structure. 
+- Export Compressed text file. 
 
 TODO:
-- Implement reading and writing to file
+- Add prefix tree to start of compressed file
+- Decode compressed files.

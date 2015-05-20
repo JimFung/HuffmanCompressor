@@ -120,7 +120,7 @@ public class HuffFrame extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			status.append("Compression started\n");
+			status.append("Compression Started\n");
 			try {
 				compressor = new Compressor();
 				String result = compressor.compress(text);
@@ -128,9 +128,9 @@ public class HuffFrame extends JFrame {
 				System.out.println("Character Encodings: " + encodings);
 				System.out.println("Compressed String: " + result);
 
-				// export = new Export(result, encodings, fileChooser
-				// .getSelectedFile().getParent());
-				// export.export();
+				export = new Export(result, encodings, fileChooser
+						.getSelectedFile().getParent());
+				export.export();
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}

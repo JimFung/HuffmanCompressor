@@ -19,18 +19,15 @@ public class Export {
 		this.path = path;
 
 		this.start = 0;
-		if (text.length() <= 8) {
+		if (text.length() <= 7) {
 			this.end = text.length();
 		} else {
-			this.end = 8;
+			this.end = 7;
 		}
 	}
 
-	public static void main(String args[]) {
-
-	}
-
 	public void export() {
+		// TODO: write prefix tree to file.
 		// String[] codes = encodings.split(",");
 		// for (String s : codes) {
 		// String[] keyValue = s.split(":");
@@ -40,19 +37,20 @@ public class Export {
 
 		try {
 			output = new DataOutputStream(new FileOutputStream(path
-					+ "compressed.txt"));
+					+ "//compressed.txt"));
 
 			while (end < text.length()) {
 				byte temp = Byte.parseByte(text.substring(start, end), 2);
 				output.writeByte(temp);
-				if (end + 8 <= text.length()) {
+				if (end + 7 <= text.length()) {
 					start = end;
-					end += 8;
+					end += 7;
 				} else {
 					start = end;
 					end = text.length();
 				}
 			}
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
